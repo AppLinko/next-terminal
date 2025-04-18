@@ -5,7 +5,10 @@ FROM node:16-alpine
 WORKDIR /app
 
 # 复制package.json和package-lock.json到工作目录
-COPY package*.json ./
+COPY package*.json ./ 
+
+# 安装构建时依赖的系统库（新增libstdc++和libcrypto1.0-compat）
+RUN apk add --no-cache python3 make g++ libc6-compat libstdc++ libcrypto1.0-compat
 
 # 安装依赖
 RUN npm install --production
