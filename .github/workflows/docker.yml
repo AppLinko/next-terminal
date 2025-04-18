@@ -40,4 +40,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Push Docker image
-      run: docker push next-terminal
+      run: docker push shentx/next-terminal
