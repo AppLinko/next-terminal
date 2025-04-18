@@ -54,8 +54,8 @@ class LicenseApi {
     }
 
     getSimpleLicense = async () => {
-        let data = await requests.get(`/license`);
-        return new SimpleLicense(data.type, data.expired);
+        // 直接返回 'enterprise' 类型的 SimpleLicense 实例
+        return new SimpleLicense('enterprise');
     }
 
     setLicense = async (values: any) => {
