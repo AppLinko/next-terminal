@@ -8,9 +8,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # 安装依赖
-RUN npm install
+RUN npm install --legacy-peer-deps
 
-RUN npm install crypto-browserify stream-browserify buffer
+RUN npm install crypto-browserify stream-browserify buffer --legacy-peer-deps
 
 # 复制项目文件
 COPY . .
